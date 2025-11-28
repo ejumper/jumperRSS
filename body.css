@@ -1837,6 +1837,33 @@ dock {
     border-radius: 14px;
 }
 
+.feed-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.feed-mark-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+.feed-mark-btn img {
+    width: 26px;
+    height: 26px;
+    display: block;
+    border: 1px solid transparent;
+}
+
+.feed-mark-btn:hover,
+.feed-mark-btn:focus-visible {
+    transform: scale(1.05);
+    outline: none;
+}
+
 .feed-star-btn {
     background: transparent;
     border: none;

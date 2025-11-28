@@ -414,6 +414,7 @@ function displayFeed(isError = false) {
     attachFolderClickHandlers();
     attachFeedItemInteractions();
     attachStarToggleHandlers();
+    attachMarkReadHandlers();
     attachRefreshHandler();
     attachLoadMoreHandler();
     refreshDesktopVideoEmbeds();
@@ -952,6 +953,15 @@ function createFeedCard(item) {
         </div>
     `;
     const isStarred = Boolean(item.starred);
+    const markReadButton = isUnread ? `
+        <button class="feed-mark-btn"
+                type="button"
+                data-item-id="${item.id}"
+                aria-label="Mark item as viewed"
+                title="Mark as viewed">
+            <img src="icons/X.webp" alt="Mark as viewed">
+        </button>
+    ` : '';
     const starButton = `
         <button class="feed-star-btn ${isStarred ? 'is-starred' : ''}"
                 type="button"
@@ -975,7 +985,10 @@ function createFeedCard(item) {
                         ${feedSourceMarkup}
                     </a>
                 </div>
-                ${starButton}
+                <div class="feed-actions">
+                    ${markReadButton}
+                    ${starButton}
+                </div>
             </div>
             ${titleMarkup}
             ${excerpt ? `<p class="feed-excerpt"><a href="${safeItemUrl}" class="feed-excerpt-link">${escapeHtml(excerpt)}</a></p>` : ''}
@@ -1377,6 +1390,19 @@ function attachViewToggleHandlers() {
             STATE.feedOffset = 0;
             STATE.feedHasMore = true;
             loadNextcloudFeed(STATE.selectedFolder);
+        });
+    });
+}
+
+function attachMarkReadHandlers() {
+    document.querySelectorAll('.feed-mark-btn').forEach(btn => {
+        if (btn.dataset.bound) return;
+        btn.dataset.bound = 'true';
+        btn.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const itemId = parseInt(btn.dataset.itemId, 10);
+            if (Number.isNaN(itemId)) return;
+            markFeedItemAsRead(itemId);
         });
     });
 }
