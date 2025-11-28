@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumperlink RSS</title>
+    <meta name="description" content="Standalone Jumperlink RSS view">
+
+    <link rel="icon" type="image/webp" sizes="192x192" href="icons/web.webp">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/web.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/web.png">
+    <link rel="apple-touch-icon" href="icons/desktop.png">
+    <meta name="apple-mobile-web-app-title" content="Jumperlink RSS">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="icons/desktop.png">
+
+    <meta property="og:title" content="Jumperlink RSS">
+    <meta property="og:description" content="Standalone Jumperlink RSS view">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="body.css">
+</head>
+<body>
+    <top>
+        <header>
+            <div class="header-main">
+                <search-container>
+                    <a class="search-trigger"
+                       href="https://cloud.jumperlink.net/apps/news"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="Open Nextcloud News">
+                        <img src="icons/desktop.webp" alt="News" class="search-icon">
+                    </a>
+                </search-container>
+                <main-text>
+                    <page-title>
+                        <div class="page-title-display">
+                            <p>00:00</p>
+                        </div>
+                        <input type="text" class="page-title-input" aria-hidden="true" tabindex="-1" disabled>
+                    </page-title>
+                    <subtitle><p></p></subtitle>
+                </main-text>
+            </div>
+        </header>
+        <overview></overview>
+    </top>
+    <bottom>
+        <text></text>
+        <links>
+            <dock></dock>
+            <search-container>
+                <a class="search-trigger"
+                   href="https://cloud.jumperlink.net/apps/news"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Open Nextcloud News">
+                    <img src="icons/desktop.webp" alt="News" class="search-icon">
+                </a>
+            </search-container>
+        </links>
+    </bottom>
+    <script src="script.js"></script>
+</body>
+</html>
