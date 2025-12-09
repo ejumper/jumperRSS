@@ -3,9 +3,9 @@
 // ============================================================================
 
 const CONFIG = {
-    NEXTCLOUD_URL: 'https://cloud.jumperlink.net',
-    NEXTCLOUD_USER: 'admin',
-    NEXTCLOUD_PASS: 'J5Lc7-oRQa7-2pyX5-Xdm53-8ERan',
+    NEXTCLOUD_URL: '*********************',
+    NEXTCLOUD_USER: '***',
+    NEXTCLOUD_PASS: '*******************************',
     INITIAL_FEED_ITEMS: 50,
     FEED_ITEMS_PER_PAGE: 50,
     SHOW_POST_CONTENT: true,
