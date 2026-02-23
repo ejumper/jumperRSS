@@ -14,8 +14,8 @@ const CONFIG = {
 };
 
 const LOCAL_STORAGE_KEYS = {
-    readItems: 'jumperlink_read_items',
-    readSyncQueue: 'jumperlink_read_sync_queue'
+    readItems: '******_read_items',
+    readSyncQueue: '******_read_sync_queue'
 };
 
 const INVIDIOUS_EMBED_HOSTS = ['inv.nadeko.net', 'yewtu.be', 'invidious.f5.si'];
